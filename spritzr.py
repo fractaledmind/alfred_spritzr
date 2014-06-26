@@ -223,12 +223,18 @@ class Spritzr(object):
         """
         html_spaces = ('&nbsp;' * (get_orp(self.max_len) + 1))
 
-        with open(os.path.join(PWD, 'template.html'), 'r') as file_obj:
+        try:
+            mode = self.wf.settings['mode']
+        except KeyError:
+            mode = 'light'
+        template_path = os.path.join(PWD, '{}_template.html'.format(mode))
+
+        with open(template_path, 'r') as file_obj:
             template = self.wf.decode(file_obj.read())
             file_obj.close()
 
         new_html = template.format(text=word,
-                                    width=self.pixel_width,
+                                    width=(self.pixel_width + 30),
                                     spaces=html_spaces,
                                     ms=self.mspw)
         with open(self.wf.datafile('spritzr.html'), 'w') as file_obj:
@@ -264,6 +270,9 @@ def main(wf):
     :param wf: the Workflow() object
     :type wf: ``object``
     """
+    #article = "Thïs is á ûnicode test. Nothing more, nothing less. Absolutely."
+    #Spritzr(article, 250, wf).read()
+
     args = wf.args
 
     try:
@@ -280,8 +289,7 @@ def main(wf):
         else:
             Spritzr(args[0], wpm, wf).read()
 
-    #article = "Thïs is á ûnicode test. Nothing more, nothing less. Absolutely."
-    #Spritzr(article, 400).read()
+    
 
 if __name__ == "__main__":
     WF = Workflow()

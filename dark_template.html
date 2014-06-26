@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#spritz_outer {{
+  background-color: #303230;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 160px;
+  line-height: 160px;
+  font-size: 60px;
+  font-family:"Courier New", Courier, monospace;
+  color: #FAFAFA;
+  /*text-align: center;*/
+/*VARIABLES*/
+  width: {width}px;
+  max-width: {width}px;
+}}
+#top_bar {{
+  background-color: #303230;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 30px;
+  line-height: 30px;
+  font-family:"Courier New", Courier, monospace;
+  font-size: 60px;
+  color: #FAFAFA;
+  /*text-align: center;*/
+/*VARIABLES*/
+  width: {width}px;
+  max-width: {width}px;
+}}
+#bottom_bar {{
+  background-color: #303230;
+  position: fixed;
+  top: 120px;
+  left: 0px;
+  height: 30px;
+  line-height: 30px;
+  font-family:"Courier New", Courier, monospace;
+  font-size: 60px;
+  color: #FAFAFA;
+  /*text-align: center;*/
+/*VARIABLES*/
+  width: {width}px;
+  max-width: {width}px;
+}}
+</style>
+</head>
+
+<body>
+  <div id="spritz_outer">
+    {text}
+  </div>
+    
+  <div id="top_bar">{spaces}&#124;</div>
+  <div id="bottom_bar">{spaces}&#124;</div>
+</body>
+
+<script>
+  setInterval(function(){{window.location.reload(true)}}, {ms})
+</script>
+</html>

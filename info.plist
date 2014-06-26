@@ -60,9 +60,9 @@
 				<key>keyword</key>
 				<string>spritzr:set</string>
 				<key>subtext</key>
-				<string>How fast do you want to read?</string>
+				<string>WPM or Reading Mode</string>
 				<key>text</key>
-				<string>Set Words per Minute</string>
+				<string>Set Spritzr settings</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
